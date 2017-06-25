@@ -5,6 +5,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+### OS generated files ###
+.DS_Store
+.DS_Store?
+**/.DS_Store
+
 # Runtime data
 pids
 *.pid
@@ -31,6 +36,11 @@ bower_components
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+
+# Compiled Dirs (http://nodejs.org/api/addons.html)
+build/
+dist/
+client/public/bundle.js
 
 # Dependency directories
 node_modules/
