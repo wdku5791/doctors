@@ -9,9 +9,10 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { logger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
+import reducer from './reducers/rootReducer.js';
 
-// const middleware = applyMiddleware(thunkMiddleware, logger);
-// const store = createStore(reducer, middleware);
+const middleware = applyMiddleware(thunkMiddleware, logger);
+const store = createStore(reducer, middleware);
 
 class Index extends Component {
 
@@ -28,8 +29,8 @@ class Index extends Component {
 }
 
 render(
-    <Index />,
+  <Provider store={store}>
+    <Index />
+  </Provider>,
   document.getElementById('root')
 );
-  // <Provider store={store}>
-  // </Provider>,
