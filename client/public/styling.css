@@ -1,0 +1,297 @@
+body {
+  padding-top: 125px;
+}
+
+.navbar {
+  z-index: 100;
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+a {
+  color: inherit;
+}
+
+.carousel {
+  max-height: 400px;
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.imageLink {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.thumbnails {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  height: 200px;
+  max-height: 72%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.profile {
+  width: 180px;
+  height: 180px;
+}
+
+.artistName, .artName{
+  color: #1b3868;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.artName {
+  color: black;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.userFormWrapper {
+  margin: 10px 0 5px 0;
+}
+
+.userForm {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+#messageButton {
+  padding-left: 34px;
+  padding-right: 33px;
+}
+
+#followButton {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.frame-square, .auctionsFrame {
+  display: inline-block;
+  vertical-align: top;
+  width: 280px;
+  height: 250px;
+  max-width: 100%;
+  max-height: 100%;
+  margin: .3em 0 .3em .3em;
+  position: relative;
+  overflow: hidden;
+}
+
+/*.auctionsFrame {
+  height: 380px;
+}*/
+
+.auctionType {
+  margin-top: 10px;
+  margin-bottom: 3px;
+  padding-top: 10px;
+}
+
+.auctionInfo {
+  padding-left: 14px;
+}
+
+.imageHeader {
+  margin-bottom: 5px;
+}
+
+.authLink {
+  float: right;
+  text-align: right;
+  display: inline;
+}
+
+.navLinks {
+  font-size: 18px;
+  color: #474a4f;
+  display: inline;
+}
+
+.userNavLinks {
+  color: green;
+  padding-right: 10px;
+  font-size: 16px
+}
+
+.label {
+  left: 20%;
+}
+
+.navSearch {
+  height: 26px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+.artworkDescription {
+  margin-bottom: 10px;
+}
+
+.closedListing {
+  color: red;
+}
+
+.authForm {
+  width: 40%;
+  margin-top: 75px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.messageWindow {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  width: 250px;
+  height: 300px;
+  z-index: 100;
+}
+
+.hiddenWindow {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  height: 2px;
+}
+
+.messageInput {
+  position: /*fixed*/;
+  bottom: 0;
+}
+
+.messageFeed {
+  overflow-y: scroll;
+  height: 200px;
+  width: 220px;
+}
+
+.senderMessage {
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.receiverMessage {
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.closeChatButton {
+  display: inline;
+  float: right;
+  cursor: pointer;
+}
+
+.chatTopBar {
+  display: inline;
+  float: left;
+  cursor: pointer;
+}
+
+.miniChatBar {
+  cursor: pointer;
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  width: 250px;
+  height: 50px;
+  z-index: 100;
+}
+
+.messageInput {
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.inboxContainer {
+  margin-bottom: 30px;
+}
+
+.inboxLink {
+  cursor: pointer;
+}
+
+.read.read {
+  /*color: red;*/
+  /*border-color: black;*/
+  /*overflow: hidden;*/
+  /*font-weight: bolder;*/
+  border-radius: 7px;
+  border-top: 1px solid #0F3D26;
+  border-bottom: 1px solid #0F3D26;
+  margin-bottom: 0.5px;
+  margin-top: 0.5px;
+  height: 60px;
+  padding: 5px;
+  background-color: rgba(153, 199, 246, 0.3);
+  box-shadow: none !important;
+}
+
+.noty.noty {
+  /*border-radius: 7px;*/
+  margin-top: 0.5px;
+  margin-bottom: 0.5px;
+  border-top: 1px solid #0F3D26;
+  border-bottom: 1px solid #0F3D26;
+  word-wrap: break-word;
+  overflow: hidden;
+  height: 60px;
+  padding: 5px;
+  box-shadow: none !important;
+}
+
+.shadowless.shadowless {
+  box-shadow:none !important;
+}
+
+.borderleft.borderleft {
+  border-left: 1px solid black;
+}
+
+.expanded.expanded {
+  height: 100% !important;
+}
+
+.contactHeader {
+  text-align: center;
+}
+
+.scrollable.scrollable {
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 370px;
+}
+
+.menuheight.menuheight {
+  height: 400px !important;
+}
+
+.cursorpointer {
+  cursor: pointer;
+}
+
+.inboxMessage {
+  overflow: hidden;
+}
+
+.fakeDiv {
+  float: left;
+  clear: both;
+}

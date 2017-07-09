@@ -11,6 +11,11 @@ import { logger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import reducer from './reducers/rootReducer.js';
 
+import Console from './components/console.jsx';
+import SignUp from './components/signup.jsx';
+import Login from './components/login.jsx';
+import NavBar from './components/NavBar.jsx';
+
 const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
 
@@ -23,8 +28,18 @@ class Index extends Component {
   render() {
 
     return (
+      <div>
       <div>Hello World</div>
-    )
+      <Router>
+        <div>
+        <NavBar />
+          <Route exact path="/" component={Console} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={SignUp} />
+        </div>
+        </Router>
+      </div>
+    );
   }
 }
 
