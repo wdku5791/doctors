@@ -19,6 +19,8 @@ import NavBar from './components/NavBar.jsx';
 const middleware = applyMiddleware(thunkMiddleware, logger);
 const store = createStore(reducer, middleware);
 
+store.dispatch({type:'LOGOUT_ERROR'});
+
 class Index extends Component {
 
   componentWillMount() {

@@ -8,7 +8,16 @@ class Login extends Component {
 
     return (
       <div className='authForm'>
-        login
+        <h3>Login Page</h3>
+        <form>
+            <div>
+              <input placeholder='username'></input>
+            </div>
+            <div>
+              <input placeholder='password'></input>
+            </div>
+          <input type="submit" value="Login"></input>
+        </form>
       </div>
     );
   }
@@ -16,7 +25,7 @@ class Login extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    // user: state.user
+    user: state.user
   };
 };
 
