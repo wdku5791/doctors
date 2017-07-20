@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-// import { Form, Button, Message } from 'semantic-ui-react';
+import Thumbnail from './thumbnail.jsx';
+import DoctorDetails from './doctorDetails.jsx';
 
-class Console extends Component {
-
-  render(){
-
+const Console = ({ selected, selector, doctors, sublist }) => {
+    
+  if (!selected) {
     return (
-      <div className='authForm'>
-        console
-      </div>
-    );
+      <div className='console'>
+        {doctors.map(doctor => (
+          <Thumbnail 
+          key={ doctor.firstName + doctor.lastName }
+          doctor={ doctor } 
+          selector={ selector } />
+        ))}
+      </div>)
+  } else {
+    return (
+      <div className='console'>
+        <DoctorDetails 
+        doctor={ selected }
+        selector={ selector } />
+        {sublist.map(doctor => {
+          if (JSON.stringify(doctor) !== JSON.stringify(selected)) {
+            return (<Thumbnail 
+            key={ doctor.firstName + doctor.lastName }
+            doctor={ doctor } 
+            selector={ selector } />)
+          }
+        })}
+      </div>)
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  };
-};
-
-export default connect(mapStateToProps)(Console);
+export default Console;

@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "doctors",
   "version": "1.0.0",
-  "description": "a generic react boilerplate on aws",
+  "description": "doctors project",
   "main": "index.js",
   "scripts": {
     "start": "npm run build && node server/server.js",
@@ -10,14 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wdku5791/ReactBoiler.git"
+    "url": "git+https://github.com/wdku5791/doctors.git"
   },
   "author": "winston ku",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wdku5791/ReactBoiler/issues"
-  },
-  "homepage": "https://github.com/wdku5791/ReactBoiler#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "babel": "^6.23.0",
@@ -28,12 +24,8 @@
     "express": "^4.15.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.7.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
     "webpack": "^2.2.1"
   }
 }

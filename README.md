@@ -1,2 +1,0 @@
-# ReactBoiler
-react aws boilerplate

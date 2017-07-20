@@ -1,53 +1,102 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import {
-  HashRouter as Router,
-  Route,
-  IndexRoute
-} from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import { logger } from 'redux-logger';
-import thunkMiddleware from 'redux-thunk';
-import reducer from './reducers/rootReducer.js';
-
+import axios from 'axios'
 import Console from './components/console.jsx';
-import SignUp from './components/signup.jsx';
-import Login from './components/login.jsx';
-import NavBar from './components/NavBar.jsx';
-
-const middleware = applyMiddleware(thunkMiddleware, logger);
-const store = createStore(reducer, middleware);
-
-store.dispatch({type:'LOGOUT_ERROR'});
+import OptionBar from './components/optionBar.jsx';
 
 class Index extends Component {
 
-  componentWillMount() {
-    console.log('mounted')
+  constructor(props) {
+    super(props);
+    this.state = {
+      doctors: [],
+      filter: null,
+      selected: null,
+      sublist: [],
+    }
+    this.query = this.query.bind(this);
+    this.selector = this.selector.bind(this);
+    this.filterHandler = this.filterHandler.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.state.doctors.length === 0) {
+      this.query();
+    }
+  }
+
+  query(queryObj = {}) {
+    axios.get('/doctors', {params: queryObj})
+    .then(({data}) => {
+      console.log('data received', data);
+      this.setState({
+        doctors: data.doctors,
+        filter: queryObj.queryString
+      })
+    })
+    .catch(function (error) {
+      console.log('errored out', error);
+      this.setState({
+        doctors: [],
+        filter: null
+      })
+    });
+  }
+
+  filterHandler(string) {
+    console.log(string);
+    if (string !== this.state.filter) {
+      let payload = {
+        queryString: string
+      };
+      this.query(payload);
+    }
+  }
+
+  selector(entry) {
+    if (entry) {
+      axios.get('/doctors', {params: 
+        {queryString: entry.specialty}
+      })
+      .then(({data}) => {
+        console.log('data', data)
+        this.setState({
+          sublist: data.doctors,
+          selected: entry
+        })
+      })
+      .catch(function (error) {
+        console.log('errored out', error);
+        this.setState({
+          sublist: [],
+          selected: null
+        })
+      });
+    } else {
+      this.setState({
+        sublist: [],
+        selected: null
+      })
+    }
   }
 
   render() {
 
     return (
       <div>
-      <div>Hello World</div>
-      <Router>
-        <div>
-        <NavBar />
-          <Route exact path="/" component={Console} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={SignUp} />
-        </div>
-        </Router>
+        <OptionBar 
+        filter={this.state.filter}
+        filterHandler={this.filterHandler} />
+        <Console doctors={this.state.doctors}
+        selected={this.state.selected}
+        selector={this.selector}
+        sublist={this.state.sublist} />
       </div>
     );
   }
 }
 
 render(
-  <Provider store={store}>
-    <Index />
-  </Provider>,
+    <Index />,
   document.getElementById('root')
 );
