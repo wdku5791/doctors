@@ -24,13 +24,17 @@
   margin-top: 8%;
   margin-left: 10%;
   margin-right: 10%;
-  padding: 6%;
+  padding: 7% 0% 7% 6%;
   background-color: rgba(40, 170, 220, .6);
 }
 
 .thumbnail {
   padding: 5px;
   display: inline-block;
+  width: 150px;
+  height: 300px;
+  margin: 1px;
+  vertical-align: top;
 }
 
 .thumbnailimage {
@@ -40,5 +44,11 @@
 
 .selected {
   font-weight: bold;
+}
+
+.detail {
+  position: relative;
+  margin: 1%;
+  transform: translateX(30%);
 }
 
