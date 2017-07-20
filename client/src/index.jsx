@@ -31,14 +31,18 @@ class Index extends Component {
       console.log('data received', data);
       this.setState({
         doctors: data.doctors,
-        filter: queryObj.queryString
+        filter: queryObj.queryString,
+        sublist: [],
+        selected: null
       })
     })
     .catch(function (error) {
       console.log('errored out', error);
       this.setState({
         doctors: [],
-        filter: null
+        filter: null,
+        sublist: [],
+        selected: null
       })
     });
   }
