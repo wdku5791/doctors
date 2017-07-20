@@ -6,6 +6,7 @@ const doctorDetail = ({ doctor, selector }) => {
       <img src={ doctor.picture }></img>
       <div>{`Name: ${doctor.firstName} ${doctor.lastName}`}</div>
       <div>{`Location: ${doctor.area}`}</div>
+      <div>{`Specialty: ${doctor.specialty}`}</div>
       <div>{`Rating: ${doctor.rating}`}</div>
       <div>{`Coverage type: ${doctor.insurance}`}</div>
       <div>{`Details: ${doctor.details}`}</div>

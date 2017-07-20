@@ -7,6 +7,7 @@ const doctorThumbnail = ({ doctor, selector }) => {
       <img className= "thumbnailimage" src={doctor.picture}></img>
       <div>{`Name: ${doctor.firstName} ${doctor.lastName}`}</div>
       <div>{`Location: ${doctor.area}`}</div>
+      <div>{`Specialty: ${doctor.specialty}`}</div>
       <div>{`Coverage type: ${doctor.insurance}`}</div>
     </div>
   )

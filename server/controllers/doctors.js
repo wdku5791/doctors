@@ -30,6 +30,8 @@ let arrayHelper = (type, array) => {
   } else {
     return result.filter((item) => {
       return item.specialty === type;
+    }).sort((a,b) => {
+      return a.rating - b.rating;
     })
   }
 
